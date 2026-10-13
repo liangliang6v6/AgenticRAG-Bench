@@ -1,0 +1,13 @@
+# Dataset files — downloaded at runtime, not committed
+**/*.jsonl
+**/*.json
+**/*.tsv
+**/*.csv
+**/*.txt
+**/*.gz
+**/*.zip
+**/*.tar
+**/*.tgz
+
+# Symlinks to local data are not committed either
+# Re-create with: bash data/download_<dataset>.sh

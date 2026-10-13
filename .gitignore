@@ -1,0 +1,54 @@
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.eggs/
+dist/
+build/
+*.egg
+
+# Virtual envs
+.venv/
+venv/
+env/
+
+# Data — downloaded at runtime (see data/download_*.sh)
+data/**/*.jsonl
+data/**/*.json
+data/**/*.tsv
+data/**/*.csv
+data/**/*.txt
+data/**/*.gz
+data/**/*.zip
+data/**/*.tar
+data/**/*.tgz
+
+# Model outputs and results
+results/
+/tmp/
+
+# FAISS embeddings and indexes (large binary files — build with build_index.sh)
+**/*.index
+**/*.pkl
+**/embeddings/
+methods/*/retriever/
+
+# LoRA adapters (large model checkpoints — download from official repo)
+methods/*/adapter/
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Jupyter
+.ipynb_checkpoints/
+*.ipynb
+
+# Logs
+*.log

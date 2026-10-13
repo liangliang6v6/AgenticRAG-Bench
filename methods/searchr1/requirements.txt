@@ -1,0 +1,5 @@
+transformers>=4.40.0,<4.48
+torch>=2.0.0
+requests
+datasets
+tqdm
