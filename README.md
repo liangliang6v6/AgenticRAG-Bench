@@ -119,9 +119,4 @@ Each `methods/<name>/` folder contains:
 3. Output format: `predictions.jsonl` with `{"id", "question", "prediction", "answer"}` per line
 4. Add a row to the Methods table above and the Dataset Coverage table
 
----
 
-## Citation
-
-If you use this benchmark collection, please cite the original papers for each method you use.
-See each `methods/<name>/README.md` for the appropriate BibTeX.
