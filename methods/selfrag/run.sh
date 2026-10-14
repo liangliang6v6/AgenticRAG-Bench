@@ -32,7 +32,7 @@ BENCH_ROOT="$(cd "$SCRIPT_DIR/../.." && pwd)"
 
 # ---------- defaults ----------
 DATASET=""
-SPLIT="validation"
+SPLIT="test"
 OUTPUT_DIR=""
 MODEL="${SELFRAG_MODEL:-selfrag/selfrag_llama2_7b}"
 RETRIEVAL_URL="${SELFRAG_RETRIEVAL_URL:-http://127.0.0.1:8000/retrieve}"
@@ -80,7 +80,7 @@ esac
 INPUT_FILE="$BENCH_ROOT/data/$DS_INTERNAL/$SPLIT.jsonl"
 if [[ ! -f "$INPUT_FILE" ]]; then
     echo "ERROR: Input file not found: $INPUT_FILE"
-    echo "Download it with: bash data/download_${DS_INTERNAL}.sh"
+    echo "Download it with: bash data/download.sh"
     exit 1
 fi
 

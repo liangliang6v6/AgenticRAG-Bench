@@ -16,10 +16,10 @@ if ! curl -s --max-time 2 "$RETRIEVAL_URL" > /dev/null 2>&1; then
     echo "Start it with: bash methods/searchr1/start_retrieval.sh --index-path <path> --corpus-path <path>"
 fi
 
-DATASETS=("hotpotqa" "2wikimhqa" "musique" "nq")
+DATASETS=("hotpotqa" "2wikimultihopqa" "musique" "nq")
 
 for DS in "${DATASETS[@]}"; do
-    FULL_INPUT="$BENCH_ROOT/data/$DS/validation.jsonl"
+    FULL_INPUT="$BENCH_ROOT/data/$DS/test.jsonl"
     [[ -f "$FULL_INPUT" ]] || { echo "SKIP $DS — data not found"; continue; }
 
     SMOKE_INPUT="/tmp/sr1_smoke_${DS}.jsonl"

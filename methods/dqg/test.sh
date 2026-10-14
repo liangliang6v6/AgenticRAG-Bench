@@ -37,7 +37,7 @@ fi
 DATASETS=("hotpotqa" "2wikimultihopqa" "musique")
 
 for DS in "${DATASETS[@]}"; do
-    FULL_INPUT="$BENCH_ROOT/data/$DS/validation.jsonl"
+    FULL_INPUT="$BENCH_ROOT/data/$DS/test.jsonl"
     [[ -f "$FULL_INPUT" ]] || { echo "SKIP $DS — data not found at $FULL_INPUT"; continue; }
 
     SMOKE_INPUT="/tmp/dqg_smoke_${DS}.jsonl"

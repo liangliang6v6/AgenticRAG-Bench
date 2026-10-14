@@ -9,7 +9,7 @@ Adapted: accept unified --input jsonl (id, question, answer fields) instead of
 
 Usage:
     python src/decompose.py \\
-        --input  ../../data/2wikimhqa/validation.jsonl \\
+        --input  ../../data/2wikimultihopqa/test.jsonl \\
         --output /tmp/ace_decompose.jsonl \\
         --model  AceSearcher/AceSearcher-14B \\
         --dataset 2wikimultihopqa \\

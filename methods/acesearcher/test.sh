@@ -12,7 +12,7 @@ INDEX_ROOT="${ACESEARCHER_INDEX_ROOT:-$SCRIPT_DIR/embeddings}"
 MAX_MODEL_LEN="${ACESEARCHER_MAX_MODEL_LEN:-8192}"
 
 # bamboogle excluded: no FAISS index available locally
-DATASETS=("2wikimhqa" "hotpotqa" "musique")
+DATASETS=("2wikimultihopqa" "hotpotqa" "musique")
 
 for DS in "${DATASETS[@]}"; do
     SPLIT="validation"

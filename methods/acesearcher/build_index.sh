@@ -10,7 +10,7 @@
 # run.sh or test.sh.
 #
 # Usage:
-#   bash methods/acesearcher/build_index.sh [--dataset 2wikimhqa] [--gpu 0]
+#   bash methods/acesearcher/build_index.sh [--dataset 2wikimultihopqa] [--gpu 0]
 #
 # Options:
 #   --dataset  <name>   Build only this dataset (default: all three)
@@ -39,7 +39,7 @@ while [[ $# -gt 0 ]]; do
     case "$1" in
         --dataset)
             case "${2,,}" in
-                2wikimhqa|2wikimultihopqa) DATASETS=("2wikimultihopqa") ;;
+                2wikimultihopqa|2wikimultihopqa) DATASETS=("2wikimultihopqa") ;;
                 hotpotqa)                  DATASETS=("hotpotqa") ;;
                 musique)                   DATASETS=("musique") ;;
                 *) echo "Unknown dataset: $2"; exit 1 ;;

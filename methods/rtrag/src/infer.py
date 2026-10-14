@@ -22,7 +22,7 @@ Prompt source:
 
 Usage:
     python src/infer.py \\
-        --input         ../../data/hotpotqa/validation.jsonl \\
+        --input         ../../data/hotpotqa/test.jsonl \\
         --output        /tmp/rtrag_predictions.jsonl \\
         --model         Qwen/Qwen2.5-14B-Instruct \\
         --retrieval-url http://127.0.0.1:8000/retrieve \\

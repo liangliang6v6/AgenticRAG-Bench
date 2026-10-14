@@ -24,7 +24,7 @@ BENCH_ROOT="$(cd "$SCRIPT_DIR/../.." && pwd)"
 
 # ── defaults ──────────────────────────────────────────────────────────────────
 DATASET="hotpotqa"
-SPLIT="validation"
+SPLIT="test"
 OUTPUT=""
 GPUS="0"
 MODEL=""
@@ -63,7 +63,7 @@ fi
 
 # ── dataset normalisation ─────────────────────────────────────────────────────
 case "${DATASET,,}" in
-    2wikimhqa|2wikimultihopqa) DS_DIR="2wikimhqa" ;;
+    2wikimultihopqa) DS_DIR="2wikimultihopqa" ;;
     hotpotqa)                  DS_DIR="hotpotqa"  ;;
     musique)                   DS_DIR="musique"   ;;
     nq)                        DS_DIR="nq"        ;;
@@ -75,7 +75,7 @@ esac
 INPUT="$BENCH_ROOT/data/$DS_DIR/$SPLIT.jsonl"
 if [[ ! -f "$INPUT" ]]; then
     echo "ERROR: Input file not found: $INPUT"
-    echo "Run: bash data/download_${DS_DIR}.sh"
+    echo "Run: bash data/download.sh"
     exit 1
 fi
 

@@ -30,7 +30,7 @@ Models:
 
 Usage:
     python src/infer.py \\
-        --input         ../../data/triviaqa/validation.jsonl \\
+        --input         ../../data/triviaqa/test.jsonl \\
         --output        /tmp/selfrag_predictions.jsonl \\
         --model         selfrag/selfrag_llama2_7b \\
         --retrieval-url http://127.0.0.1:8000/retrieve \\

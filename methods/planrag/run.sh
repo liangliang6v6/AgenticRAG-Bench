@@ -95,7 +95,7 @@ esac
 
 if [[ ! -f "$INPUT_FILE" ]]; then
     echo "ERROR: Input file not found: $INPUT_FILE"
-    echo "Download with: bash data/download_dqa.sh"
+    echo "Download with: bash data/download.sh dqa"
     exit 1
 fi
 

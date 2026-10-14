@@ -20,7 +20,7 @@ Prompt source:
 
 Usage:
     python src/infer.py \\
-        --input         ../../data/hotpotqa/validation.jsonl \\
+        --input         ../../data/hotpotqa/test.jsonl \\
         --output        /tmp/ircot_predictions.jsonl \\
         --dataset       hotpotqa \\
         --model         Qwen/Qwen2.5-14B-Instruct \\

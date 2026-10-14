@@ -16,7 +16,7 @@ Prompt source (verbatim from official repo, infer_dataset.py lines 113-126):
 Usage:
     # Start retrieval server first (see retrieval_server.py or run.sh)
     python src/infer.py \\
-        --input         ../../data/2wikimhqa/validation.jsonl \\
+        --input         ../../data/2wikimultihopqa/test.jsonl \\
         --output        /tmp/searchr1_predictions.jsonl \\
         --model         PeterJinGo/SearchR1-nq_hotpotqa_train-qwen2.5-7b-em-ppo \\
         --retrieval-url http://127.0.0.1:8000/retrieve \\

@@ -32,7 +32,7 @@ EXTRA_ARGS=()
 [[ -n "$PROMPTS_DIR" ]] && EXTRA_ARGS+=(--prompts-dir "$PROMPTS_DIR")
 
 for DS in "${DATASETS[@]}"; do
-    FULL_INPUT="$BENCH_ROOT/data/$DS/validation.jsonl"
+    FULL_INPUT="$BENCH_ROOT/data/$DS/test.jsonl"
     [[ -f "$FULL_INPUT" ]] || { echo "SKIP $DS — data not found at $FULL_INPUT"; continue; }
 
     SMOKE_INPUT="/tmp/decomp_smoke_${DS}.jsonl"

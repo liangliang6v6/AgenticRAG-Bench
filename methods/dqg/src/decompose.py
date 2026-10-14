@@ -21,7 +21,7 @@ Output format: [SQ1] sub-q-1 ; [SQ2] sub-q-2 ; ...
 
 Usage:
     python src/decompose.py \\
-        --input   ../../data/hotpotqa/validation.jsonl \\
+        --input   ../../data/hotpotqa/test.jsonl \\
         --output  /tmp/dqg_decomposed.jsonl \\
         --adapter /path/to/ft_panel_lora.ckpt \\
         --gpus    0

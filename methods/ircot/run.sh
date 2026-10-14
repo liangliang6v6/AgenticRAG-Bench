@@ -45,7 +45,7 @@ BENCH_ROOT="$(cd "$SCRIPT_DIR/../.." && pwd)"
 
 # ---------- defaults ----------
 DATASET=""
-SPLIT="validation"
+SPLIT="test"
 OUTPUT_DIR=""
 RETRIEVAL_URL="${IRCOT_RETRIEVAL_URL:-http://127.0.0.1:8000/retrieve}"
 MODEL="${IRCOT_MODEL:-Qwen/Qwen2.5-14B-Instruct}"
@@ -74,23 +74,23 @@ done
 
 if [[ -z "$DATASET" || -z "$OUTPUT_DIR" ]]; then
     echo "Usage: bash run.sh --dataset <name> --output <dir> [options]"
-    echo "Datasets: hotpotqa, 2wikimhqa, musique, iirc"
+    echo "Datasets: hotpotqa, 2wikimultihopqa, musique, iirc"
     exit 1
 fi
 
 # ---------- dataset name normalisation ----------
 case "$DATASET" in
     hotpotqa)       DS_INTERNAL="hotpotqa" ;;
-    2wikimhqa|2wikimultihopqa) DS_INTERNAL="2wikimultihopqa" ;;
+    2wikimultihopqa|2wikimultihopqa) DS_INTERNAL="2wikimultihopqa" ;;
     musique)        DS_INTERNAL="musique" ;;
     iirc)           DS_INTERNAL="iirc" ;;
-    *) echo "ERROR: Unknown dataset '$DATASET'. Choose from: hotpotqa, 2wikimhqa, musique, iirc"; exit 1 ;;
+    *) echo "ERROR: Unknown dataset '$DATASET'. Choose from: hotpotqa, 2wikimultihopqa, musique, iirc"; exit 1 ;;
 esac
 
 INPUT_FILE="$BENCH_ROOT/data/$DS_INTERNAL/$SPLIT.jsonl"
 if [[ ! -f "$INPUT_FILE" ]]; then
     echo "ERROR: Input file not found: $INPUT_FILE"
-    echo "Download it with: bash data/download_${DS_INTERNAL}.sh"
+    echo "Download it with: bash data/download.sh"
     exit 1
 fi
 

@@ -3,7 +3,7 @@
 #
 # Usage:
 #   bash methods/acesearcher/run.sh \
-#       --dataset  2wikimhqa \
+#       --dataset  2wikimultihopqa \
 #       --split    validation \
 #       --output   results/acesearcher/ \
 #       --gpus     0,1
@@ -23,8 +23,8 @@ SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 BENCH_ROOT="$(cd "$SCRIPT_DIR/../.." && pwd)"
 
 # ── defaults ──────────────────────────────────────────────────────────────────
-DATASET="2wikimhqa"
-SPLIT="validation"
+DATASET="2wikimultihopqa"
+SPLIT="test"
 INPUT_OVERRIDE=""
 OUTPUT=""
 GPUS="0,1"
@@ -67,7 +67,7 @@ fi
 # ── dataset → dataset_key mapping ────────────────────────────────────────────
 # Normalise user-friendly names to AceSearcher internal dataset keys
 case "${DATASET,,}" in
-    2wikimhqa|2wikimultihopqa) DATASET_KEY="2wikimultihopqa" ;;
+    2wikimultihopqa|2wikimultihopqa) DATASET_KEY="2wikimultihopqa" ;;
     hotpotqa)                  DATASET_KEY="hotpotqa" ;;
     musique)                   DATASET_KEY="musique" ;;
     bamboogle)                 DATASET_KEY="bamboogle" ;;
@@ -79,7 +79,7 @@ esac
 INPUT="${INPUT_OVERRIDE:-$BENCH_ROOT/data/$DATASET/$SPLIT.jsonl}"
 if [[ ! -f "$INPUT" ]]; then
     echo "ERROR: Input file not found: $INPUT"
-    echo "Run: bash data/download_${DATASET,,}.sh"
+    echo "Run: bash data/download.sh"
     exit 1
 fi
 
