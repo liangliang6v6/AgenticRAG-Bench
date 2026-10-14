@@ -2,7 +2,7 @@
 
 **Paper**: [Search-R1: Training LLMs to Reason and Search with Reinforcement Learning](https://arxiv.org/abs/2503.09516) / [Search-R1 v2](https://arxiv.org/abs/2505.15117)  
 **Venue**: arxiv 2025  
-**Authors**: Bowen Jin, Hansi Zeng, Zhenrui Yue, Dong Wang, Heng Ji, Jiawei Han  
+**Authors**: Bowen Jin, Hansi Zeng, Zhenrui Yue, Jinsung Yoon, Sercan Arik, Dong Wang, Hamed Zamani, Jiawei Han  
 **Official Repository**: https://github.com/PeterGriffinJin/Search-R1
 
 ---
@@ -141,9 +141,9 @@ bash methods/searchr1/test.sh
 ## Citation
 
 ```bibtex
-@article{jin2025searchr1,
-  title   = {Search-R1: Training LLMs to Reason and Search with Reinforcement Learning},
-  author  = {Jin, Bowen and Zeng, Hansi and Yue, Zhenrui and Wang, Dong and Ji, Heng and Han, Jiawei},
+@article{jin2025search,
+  title   = {Search-R1: Training LLMs to Reason and Leverage Search Engines with Reinforcement Learning},
+  author  = {Jin, Bowen and Zeng, Hansi and Yue, Zhenrui and Yoon, Jinsung and Arik, Sercan and Wang, Dong and Zamani, Hamed and Han, Jiawei},
   journal = {arXiv preprint arXiv:2503.09516},
   year    = {2025},
 }

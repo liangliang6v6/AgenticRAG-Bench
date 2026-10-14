@@ -2,7 +2,7 @@
 
 **Paper**: [AceSearcher: Bootstrapping Reasoning and Search for LLMs via Reinforced Self-Play](https://arxiv.org/abs/2509.24193)  
 **Venue**: NeurIPS 2025 Spotlight  
-**Authors**: Rita Reza Nouriborji, et al.  
+**Authors**: Ran Xu, Yuchen Zhuang, Zihan Dong, Ruiyu Wang, Yue Yu, Joyce C. Ho, Linjun Zhang, Haoyu Wang, Wenqi Shi, Carl Yang  
 **Official Repository**: https://github.com/ritaranx/AceSearcher  
 **Official Repo Commit**: tracked at time of integration
 
@@ -149,10 +149,11 @@ bash methods/acesearcher/test.sh
 ## Citation
 
 ```bibtex
-@inproceedings{acesearcher2025,
+@inproceedings{xu2025acesearcher,
   title     = {AceSearcher: Bootstrapping Reasoning and Search for LLMs via Reinforced Self-Play},
-  author    = {Nouriborji, Rita Reza and others},
-  booktitle = {NeurIPS 2025},
+  author    = {Ran Xu and Yuchen Zhuang and Zihan Dong and Ruiyu Wang and Yue Yu and Joyce C. Ho and Linjun Zhang and Haoyu Wang and Wenqi Shi and Carl Yang},
+  booktitle = {the 39th Annual Conference on Neural Information Processing Systems},
   year      = {2025},
+  url       = {https://openreview.net/forum?id=jSgCM0uZn3},
 }
 ```
