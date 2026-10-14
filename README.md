@@ -21,14 +21,14 @@ The repository currently includes **8 methods** covering reinforcement learning,
 
 | Method | Paper | Venue | Approach | Models |
 |---|---|---|---|---|
-| [AceSearcher](methods/acesearcher/) | [Bootstrapping Reasoning and Search via Reinforced Self-Play](https://arxiv.org/abs/2509.24193) | NeurIPS 2025 Spotlight | RL-based search | 1.5B, 8B, 14B, 32B |
-| [Search-R1](methods/searchr1/) | [Training LLMs to Reason and Search with Reinforcement Learning](https://arxiv.org/abs/2503.09516) | 2025 | RL-based search | Qwen2.5 3B/7B |
-| [IRCoT](methods/ircot/) | [Interleaving Retrieval with Chain-of-Thought Reasoning](https://aclanthology.org/2023.acl-long.557/) | ACL 2023 | Iterative retrieval | Configurable LLM |
-| [DecomP-ODQA](methods/decomp/) | [Decomposed Prompting: A Modular Approach](https://arxiv.org/abs/2210.02406) | ICLR 2023 | Question decomposition | Configurable LLM |
-| [RT-RAG](methods/rtrag/) | [Reasoning in Trees: Improving RAG for Multi-Hop QA](https://arxiv.org/abs/2601.11255) | 2026 | Tree-based reasoning | Configurable LLM |
-| [DQG / FT-PANEL](methods/dqg/) | [Generating Complex Question Decompositions in the Face of Distribution Shifts](https://aclanthology.org/2025.naacl-long.55/) | NAACL 2025 | Supervised decomposition | Qwen2.5-7B + LoRA |
-| [Self-RAG](methods/selfrag/) | [Learning to Retrieve, Generate, and Critique](https://openreview.net/forum?id=hSyW5go0v8) | ICLR 2024 | Self-reflective retrieval | Llama2 7B/13B |
-| [PlanRAG](methods/planrag/) | [A Plan-then-Retrieval Augmented Generation](https://aclanthology.org/2024.naacl-long.364/) | NAACL 2024 | Planning and retrieval | OpenAI-compatible LLM |
+| [AceSearcher](methods/acesearcher/) | [Bootstrapping Reasoning and Search via Reinforced Self-Play](https://arxiv.org/abs/2509.24193) | **NeurIPS 2025 Spotlight** | RL-based search | 1.5B, 8B, 14B, 32B |
+| [Search-R1](methods/searchr1/) | [Training LLMs to Reason and Leverage Search Engines with Reinforcement Learning](https://openreview.net/forum?id=Rwhi91ideu) | **COLM 2025** | RL-based search | Qwen2.5 3B/7B |
+| [IRCoT](methods/ircot/) | [Interleaving Retrieval with Chain-of-Thought Reasoning](https://aclanthology.org/2023.acl-long.557/) | **ACL 2023** | Iterative retrieval | Configurable LLM |
+| [DecomP-ODQA](methods/decomp/) | [Decomposed Prompting: A Modular Approach](https://openreview.net/forum?id=_nGgzQjzaRy) | **ICLR 2023** | Question decomposition | Configurable LLM |
+| [RT-RAG](methods/rtrag/) | [Reasoning in Trees: Improving RAG for Multi-Hop QA](https://arxiv.org/abs/2601.11255) | **WWW 2026 Workshop** | Tree-based reasoning | Configurable LLM |
+| [DQG / FT-PANEL](methods/dqg/) | [Generating Complex Question Decompositions in the Face of Distribution Shifts](https://aclanthology.org/2025.naacl-long.55/) | **NAACL 2025** | Supervised decomposition | Qwen2.5-7B + LoRA |
+| [Self-RAG](methods/selfrag/) | [Learning to Retrieve, Generate, and Critique](https://openreview.net/forum?id=hSyW5go0v8) | **ICLR 2024 Oral** | Self-reflective retrieval | Llama2 7B/13B |
+| [PlanRAG](methods/planrag/) | [A Plan-then-Retrieval Augmented Generation](https://aclanthology.org/2024.naacl-long.364/) | **NAACL 2024** | Planning and retrieval | OpenAI-compatible LLM |
 
 Each method has its own directory containing implementation details, installation requirements, retrieval setup, and inference scripts.
 
