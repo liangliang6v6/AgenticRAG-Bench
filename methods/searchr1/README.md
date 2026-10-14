@@ -49,14 +49,14 @@ Full model collection: https://huggingface.co/collections/PeterJinGo/search-r1-6
 
 ## Supported Datasets
 
-| Dataset | Split | Download |
+| Dataset | Official split (size) | Download |
 |---|---|---|
-| HotpotQA | fullwiki-dev | `bash data/download_hotpotqa.sh` |
-| 2WikiMultiHopQA | dev | `bash data/download_2wikimhqa.sh` |
-| MuSiQue | dev | `bash data/download_musique.sh` |
-| NQ | dev | `bash data/download_nq.sh` |
-| TriviaQA | dev | `bash data/download_triviaqa.sh` |
-| PopQA | test | `bash data/download_popqa.sh` |
+| HotpotQA | fullwiki-dev, 7 405 q | `bash data/download.sh hotpotqa` |
+| 2WikiMultiHopQA | dev, 12 576 q | `bash data/download.sh 2wikimultihopqa` |
+| MuSiQue | answerable-dev, 2 417 q | `bash data/download.sh musique` |
+| NQ | open-dev, 3 610 q | `bash data/download.sh nq` |
+| TriviaQA | unfiltered-dev, 7 993 q | `bash data/download.sh triviaqa` |
+| PopQA | test, 14 267 q | `bash data/download.sh popqa` |
 
 ---
 
@@ -104,12 +104,12 @@ pip install -r methods/searchr1/requirements.txt
 # 1. Start retrieval server (see above)
 
 # 2. Download dataset
-bash data/download_hotpotqa.sh
+bash data/download.sh hotpotqa
 
 # 3. Run SearchR1-7B on HotpotQA
 bash methods/searchr1/run.sh \
     --dataset      hotpotqa \
-    --split        validation \
+    --split        test \
     --output       results/searchr1/ \
     --retrieval-url http://127.0.0.1:8000/retrieve \
     --gpus         0 \

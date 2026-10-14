@@ -54,11 +54,11 @@ that indicates the position number (X) of the sub-question, i.e. "[SQ1] ... [SQ2
 
 ## Supported Datasets
 
-| Dataset | Split | Download |
+| Dataset | Official split (size) | Download |
 |---|---|---|
-| 2WikiMultiHopQA | dev | `bash data/download_2wikimhqa.sh` |
-| HotpotQA | dev | `bash data/download_hotpotqa.sh` |
-| MuSiQue | dev | `bash data/download_musique.sh` |
+| 2WikiMultiHopQA | dev, 12 576 q | `bash data/download.sh 2wikimultihopqa` |
+| HotpotQA | fullwiki-dev, 7 405 q | `bash data/download.sh hotpotqa` |
+| MuSiQue | answerable-dev, 2 417 q | `bash data/download.sh musique` |
 
 ---
 
@@ -113,12 +113,12 @@ pip install -r methods/dqg/requirements.txt
 # 1. Start retrieval server (see above)
 
 # 2. Download dataset
-bash data/download_hotpotqa.sh
+bash data/download.sh hotpotqa
 
 # 3. Run DQG/FT-PANEL on HotpotQA
 bash methods/dqg/run.sh \
     --dataset      hotpotqa \
-    --split        validation \
+    --split        test \
     --output       results/dqg/ \
     --adapter      /path/to/ft_panel_lora/test_model_lora.ckpt \
     --retrieval-url http://127.0.0.1:8000/retrieve \

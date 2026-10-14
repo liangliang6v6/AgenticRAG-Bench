@@ -57,12 +57,12 @@ Both models have Self-RAG reflection tokens in their vocabulary and require **no
 
 ## Supported Datasets
 
-| Dataset | Split | Download |
+| Dataset | Official split (size) | Download |
 |---|---|---|
-| TriviaQA | validation | `bash data/download_triviaqa.sh` |
-| PopQA | test | `bash data/download_popqa.sh` |
-| FEVER | dev | `bash data/download_fever.sh` |
-| HotpotQA | dev | `bash data/download_hotpotqa.sh` |
+| TriviaQA | unfiltered-dev, 7 993 q | `bash data/download.sh triviaqa` |
+| PopQA | test, 14 267 q | `bash data/download.sh popqa` |
+| FEVER | v1.0 dev, 19 998 q | `bash data/download.sh fever` |
+| HotpotQA | fullwiki-dev, 7 405 q | `bash data/download.sh hotpotqa` |
 
 ---
 
@@ -105,12 +105,12 @@ pip install -r methods/selfrag/requirements.txt
 # 2. Start retrieval server (see above)
 
 # 3. Download dataset
-bash data/download_triviaqa.sh
+bash data/download.sh triviaqa
 
 # 4. Run Self-RAG on TriviaQA
 bash methods/selfrag/run.sh \
     --dataset      triviaqa \
-    --split        validation \
+    --split        test \
     --output       results/selfrag/ \
     --retrieval-url http://127.0.0.1:8000/retrieve \
     --model        selfrag/selfrag_llama2_7b \

@@ -55,11 +55,11 @@ This adaptation replaces it with a local vLLM model.
 
 ## Supported Datasets
 
-| Dataset | Split | Download |
+| Dataset | Official split (size) | Download |
 |---|---|---|
-| 2WikiMultiHopQA | dev | `bash data/download_2wikimhqa.sh` |
-| HotpotQA | dev | `bash data/download_hotpotqa.sh` |
-| MuSiQue | dev | `bash data/download_musique.sh` |
+| 2WikiMultiHopQA | dev, 12 576 q | `bash data/download.sh 2wikimultihopqa` |
+| HotpotQA | fullwiki-dev, 7 405 q | `bash data/download.sh hotpotqa` |
+| MuSiQue | answerable-dev, 2 417 q | `bash data/download.sh musique` |
 
 ---
 
@@ -114,12 +114,12 @@ bash methods/searchr1/start_retrieval.sh \
     --corpus-path /path/to/wiki-18.jsonl
 
 # 2. Download dataset
-bash data/download_hotpotqa.sh
+bash data/download.sh hotpotqa
 
 # 3. Run RT-RAG on HotpotQA
 bash methods/rtrag/run.sh \
     --dataset      hotpotqa \
-    --split        validation \
+    --split        test \
     --output       results/rtrag/ \
     --retrieval-url http://127.0.0.1:8000/retrieve \
     --model        Qwen/Qwen2.5-14B-Instruct \

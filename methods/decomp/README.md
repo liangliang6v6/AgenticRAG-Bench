@@ -72,11 +72,11 @@ This implementation supports any instruction-tuned LLM via vLLM.
 
 ## Supported Datasets
 
-| Dataset | Split | Download |
+| Dataset | Official split (size) | Download |
 |---|---|---|
-| HotpotQA (fullwiki) | dev | `bash data/download_hotpotqa.sh` |
-| 2WikiMultiHopQA | dev | `bash data/download_2wikimhqa.sh` |
-| MuSiQue | dev | `bash data/download_musique.sh` |
+| HotpotQA | fullwiki-dev, 7 405 q | `bash data/download.sh hotpotqa` |
+| 2WikiMultiHopQA | dev, 12 576 q | `bash data/download.sh 2wikimultihopqa` |
+| MuSiQue | answerable-dev, 2 417 q | `bash data/download.sh musique` |
 
 ---
 
@@ -123,7 +123,7 @@ git clone https://github.com/HarshTrivedi/DecomP-ODQA /tmp/DecomP-ODQA
 # --prompts-dir /tmp/DecomP-ODQA/prompts
 ```
 
-Prompts are auto-discovered if cloned to `/data2/liang/data3/code/DecomP-ODQA` or placed in `methods/decomp/prompts/`.
+Prompts are auto-discovered if placed in `methods/decomp/prompts/` (already committed in this repo).
 
 ---
 
@@ -145,12 +145,12 @@ git clone https://github.com/HarshTrivedi/DecomP-ODQA /tmp/DecomP-ODQA
 # 2. Start retrieval server (see Retrieval Setup above)
 
 # 3. Download dataset
-bash data/download_hotpotqa.sh
+bash data/download.sh hotpotqa
 
 # 4. Run DecomP-ODQA on HotpotQA
 bash methods/decomp/run.sh \
     --dataset      hotpotqa \
-    --split        validation \
+    --split        test \
     --output       results/decomp/ \
     --retrieval-url http://127.0.0.1:9200/retrieve \
     --prompts-dir  /tmp/DecomP-ODQA/prompts \

@@ -55,12 +55,14 @@ This implementation supports any instruction-tuned LLM via vLLM.
 
 ## Supported Datasets
 
-| Dataset | Split | Download |
+| Dataset | Official split (size) | Download |
 |---|---|---|
-| HotpotQA (fullwiki) | dev | `bash data/download_hotpotqa.sh` |
-| 2WikiMultiHopQA | dev | `bash data/download_2wikimhqa.sh` |
-| MuSiQue | dev | `bash data/download_musique.sh` |
-| IIRC | dev | `bash data/download_iirc.sh` |
+| HotpotQA | fullwiki-dev, 7 405 q | `bash data/download.sh hotpotqa` |
+| 2WikiMultiHopQA | dev, 12 576 q | `bash data/download.sh 2wikimultihopqa` |
+| MuSiQue | answerable-dev, 2 417 q | `bash data/download.sh musique` |
+| IIRC | dev, 954 q | `bash data/download.sh iirc` |
+
+> **Note**: The original IRCoT paper evaluates on a **500-example subsample** of each dev split (seed 13370, using `processing_scripts/subsample_dataset_and_remap_paras.py` from the official repo). The full dev sets are provided here; to replicate the exact 500-example splits, run the IRCoT subsampling script after cloning the official repo.
 
 ---
 
@@ -109,7 +111,7 @@ git clone https://github.com/StonyBrookNLP/ircot /tmp/ircot
 # --prompts-dir /tmp/ircot/prompts
 ```
 
-The prompts are auto-discovered if cloned to `/data2/liang/data3/code/ircot` or placed in `methods/ircot/prompts/`.
+The prompts are auto-discovered if placed in `methods/ircot/prompts/` (already committed in this repo).
 
 ---
 
@@ -131,12 +133,12 @@ git clone https://github.com/StonyBrookNLP/ircot /tmp/ircot
 # 2. Start retrieval server (see Retrieval Setup above)
 
 # 3. Download dataset
-bash data/download_hotpotqa.sh
+bash data/download.sh hotpotqa
 
 # 4. Run IRCoT on HotpotQA
 bash methods/ircot/run.sh \
     --dataset      hotpotqa \
-    --split        validation \
+    --split        test \
     --output       results/ircot/ \
     --retrieval-url http://127.0.0.1:9200 \
     --prompts-dir  /tmp/ircot/prompts \

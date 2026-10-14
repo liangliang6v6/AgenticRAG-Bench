@@ -40,14 +40,14 @@ Both stages use the **same checkpoint** — no separate planner and reader model
 
 ## Supported Datasets
 
-| Dataset | Split | Download |
+| Dataset | Official split (size) | Download |
 |---|---|---|
-| 2WikiMultiHopQA | dev | `bash data/download_2wikimhqa.sh` |
-| HotpotQA | fullwiki-dev | `bash data/download_hotpotqa.sh` |
-| MuSiQue | dev (answerable) | `bash data/download_musique.sh` |
-| Bamboogle | test | `bash data/download_bamboogle.sh` |
-| FEVER | dev | `bash data/download_fever.sh` |
-| HoverFEVER | dev | `bash data/download_fever.sh` |
+| 2WikiMultiHopQA | dev, 12 576 q | `bash data/download.sh 2wikimultihopqa` |
+| HotpotQA | fullwiki-dev, 7 405 q | `bash data/download.sh hotpotqa` |
+| MuSiQue | answerable-dev, 2 417 q | `bash data/download.sh musique` |
+| Bamboogle | test, 125 q | `bash data/download.sh bamboogle` |
+| FEVER | v1.0 dev, 19 998 q | `bash data/download.sh fever` |
+| HoverFEVER | dev | `bash data/download.sh hoverfever` |
 
 ---
 
@@ -77,7 +77,7 @@ appropriate E5 model. Approximate disk usage:
 To build a single dataset (e.g., only 2WikiMHQA) or use a different GPU:
 
 ```bash
-bash methods/acesearcher/build_index.sh --dataset 2wikimhqa --gpu 0
+bash methods/acesearcher/build_index.sh --dataset 2wikimultihopqa --gpu 0
 ```
 
 The index is stored at `methods/acesearcher/embeddings/` and resolved
@@ -101,17 +101,17 @@ pip install -r methods/acesearcher/requirements.txt
 pip install -r methods/acesearcher/requirements.txt
 
 # 2. Download question sets
-bash data/download_2wikimhqa.sh
-bash data/download_hotpotqa.sh
-bash data/download_musique.sh
+bash data/download.sh 2wikimultihopqa
+bash data/download.sh hotpotqa
+bash data/download.sh musique
 
 # 3. Build retrieval indexes (one time, ~30–90 min per dataset on 1 GPU)
 bash methods/acesearcher/build_index.sh
 
 # 4. Run inference
 bash methods/acesearcher/run.sh \
-    --dataset  2wikimhqa \
-    --split    validation \
+    --dataset  2wikimultihopqa \
+    --split    test \
     --output   results/acesearcher_14b/ \
     --gpus     0,1 \
     --size     14b

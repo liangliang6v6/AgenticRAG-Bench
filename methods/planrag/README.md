@@ -40,7 +40,7 @@ PlanRAG uses the **DQA (Decision QA) benchmark** with two scenarios:
 
 Download both scenarios with:
 ```bash
-bash data/download_dqa.sh
+bash data/download.sh dqa
 ```
 This clones `myeon9h/PlanRAG` and extracts the DQA JSONL files.
 
@@ -99,7 +99,7 @@ pip install -r methods/planrag/requirements.txt
 
 ```bash
 # Download DQA dataset (clones PlanRAG repo)
-bash data/download_dqa.sh
+bash data/download.sh dqa
 
 # Run PlanRAG on LocatE (Neo4j)
 OPENAI_API_KEY=sk-... bash methods/planrag/run.sh \
